@@ -20,6 +20,10 @@ const port = process.env.SERVER_PORT || 3001;
 // Server Setup
 const app = express();
 
+// FOR HOSTING, use build folder to serve static (js, html, and css files) files to the browser
+// KEEP COMMENTED UNTIL READY TO HOST
+// app.use(express.static(__dirname, '../build'));
+
 // DB Connection
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => app.set('db', dbInstance))
@@ -85,6 +89,13 @@ app.get(
 // Access user, logout user
 app.get('/api/me', getUser);
 app.get('/logout', logout);
+
+// FOR HOSTING, Send Front End Code if no other path is matched
+// KEEP COMMENTED UNTIL READY TO HOST
+// const path = require('path');
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../build/index.html'));
+// });
 
 app.listen(port, () => {
   console.log('App listening on port 3001!');

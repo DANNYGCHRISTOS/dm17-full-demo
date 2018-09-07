@@ -8,6 +8,14 @@ import './App.css';
 
 import Header from './components/Header/Header';
 
+// RENDER OUR ROUTES
+
+// NOTES:
+// Look at package.json for nodemon config
+// Look at packahe.json for proxy
+// Use the schema.sql to keep track of db structure
+// Everyone loves a good easter egg
+
 class App extends Component {
   render() {
     return (
