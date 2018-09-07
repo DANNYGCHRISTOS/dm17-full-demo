@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { getCart } from '../../ducks/cartReducer';
 import { getUser } from '../../ducks/userReducer';
-
+// HEADER IS CONNECTED, WILL PULL DATA TO SHOW ON PAGE LOAD
 class Header extends React.Component {
   componentDidMount() {
     this.props.getUser();
