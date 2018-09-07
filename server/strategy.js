@@ -9,6 +9,7 @@ module.exports = new Auth0Strategy(
     callbackURL: '/login'
   },
   (accessToken, refreshToken, extraParams, profile, done) => {
+    // Profile = data from Auth0
     return done(null, profile);
   }
 );

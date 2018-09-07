@@ -4,6 +4,7 @@ const getUser = (req, res) => {
 };
 
 const logout = (req, res) => {
+  // Logout user and send to client
   req.session.destroy(() => {
     res.redirect('http://localhost:3000/');
   });

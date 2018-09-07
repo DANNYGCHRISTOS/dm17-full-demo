@@ -18,13 +18,16 @@ class Header extends React.Component {
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/cart">Cart {this.props.cart.cart.length}</Link>
-        <a
-          href={
-            this.props.user.user.user_name ? REACT_APP_LOGOUT : REACT_APP_LOGIN
-          }
-        >
-          {this.props.user.user.user_name ? 'Logout' : 'Login'}
-        </a>
+        {this.props.user.user.user_name ? (
+          <div>
+            <a href={REACT_APP_LOGOUT}>Logout</a>
+            <p>Welcome, {this.props.user.user.user_name}</p>
+          </div>
+        ) : (
+          <div>
+            <a href={REACT_APP_LOGIN}>Login</a>
+          </div>
+        )}
       </header>
     );
   }
